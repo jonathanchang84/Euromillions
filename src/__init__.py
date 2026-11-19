@@ -1,1 +1,0 @@
-# EuroMillions Predictor - Package init

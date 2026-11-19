@@ -75,6 +75,23 @@ export default function App() {
 
   useEffect(() => { loadAll(preset, lookback); }, [preset, lookback]);
 
+  useEffect(() => {
+    setStatus("Checking LottoROI for new draws...");
+    invoke("scrape_new_draws")
+      .then((msg: any) => {
+        const textMsg = typeof msg === "string" ? msg : "Checked for new draws";
+        if (!textMsg.includes("Added 0")) {
+          setStatus("Auto-update: " + textMsg);
+          loadAll();
+        } else {
+          setStatus("Auto-check: " + textMsg + " (up to date)");
+        }
+      })
+      .catch(() => {
+        setStatus("Auto-check skipped (offline)");
+      });
+  }, []);
+
   const windowDraws = useMemo(() => (lookback === "all" ? draws : draws.slice(0, parseInt(lookback, 10))), [draws, lookback]);
 
   const analytics = useMemo(() => {

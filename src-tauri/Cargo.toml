@@ -1,6 +1,6 @@
 [package]
 name = "app"
-version = "0.1.0"
+version = "0.1.2"
 description = "A Tauri App"
 authors = ["you"]
 license = ""
@@ -30,3 +30,4 @@ regex = "1"
 rand = "0.8"
 fs2 = "0.4"
 base64 = "0.21"
+thiserror = "2.0.21"

@@ -10,11 +10,12 @@ A standalone, double-clickable **macOS desktop application** built with **Tauri 
 - **Automatic & Manual Result Updates:**
   - **Auto-Check on Startup:** Automatically checks LottoROI in the background when the app opens, displays a live status banner (`Checking LottoROI...`, `up to date`, or `Added X new draws`), and refreshes charts and recommendations if new draws are added.
   - **Manual Scrape & CSV Import:** Trigger a manual check anytime or import/merge custom EuroMillions CSV exports directly from the UI.
-- **Four Interactive Analytics Views:**
+- **Five Interactive Analytics Views:**
   1. **Graphical Charts:** Visual draw-rate comparisons across Main Numbers (`1–50`) and Lucky Stars (`1–12`), comparing the selected lookback window against recent 50-draw momentum with recommended picks highlighted.
   2. **History Table:** Searchable and sortable draw history displaying draw dates, styled main number balls, Lucky Star badges, and jackpots.
   3. **Rolled-Up Rates & Probabilities:** Full breakdown of draw counts, empirical draw rates, recent 50-draw rates, current gap (draws since last seen), average gap, theoretical single-draw fair probabilities (`10.00%` main / `16.67%` Lucky Stars), and normalized model weights.
-  4. **Recommendations & Explanations:** Generates upcoming Tuesday/Friday draw picks across **Balanced**, **Hot / Momentum**, **Cold / Overdue**, and **Theoretical** presets with per-ball metric cards.
+  4. **Recommendations & Explanations:** Generates upcoming Tuesday/Friday draw picks across **Balanced**, **Hot / Momentum**, **Cold / Overdue**, **Theoretical**, and **Adaptive** presets with per-ball metric cards.
+  5. **Prediction Learning Log:** Automatically saves strategy snapshots for each upcoming draw, records actual results and match counts when available, and compares each strategy against the expected random-match baseline. Adaptive mode uses the best historical average after 10 settled draws.
 - **Configurable Lookback Windows:** Filter charts and tables dynamically across **All Draws**, **Last 200**, **Last 100**, or **Last 50** draws.
 
 ---
@@ -66,4 +67,4 @@ The compiled `.app` bundle and `.dmg` installer will be generated inside `src-ta
 
 ## ℹ️ Statistical Independence Note
 
-Each EuroMillions draw is a physically independent random event. Historical frequencies, gaps, and model weights are provided for analytical exploration and do not alter true mathematical draw probabilities.
+Each EuroMillions draw is a physically independent random event. Historical frequencies, gaps, and backtested model scores are descriptive only; past results can be noise and do not improve or alter true mathematical draw probabilities.
